@@ -1,0 +1,48 @@
+#rock {
+	background-image: url("../images/rps.png");
+	top: 40px;
+	left: 10px;
+	background-repeat: false;
+	background-size: 600px 574px;
+	height: 185px;
+	width: 200px;
+	border-radius: 100%;
+	background-position: 400px -390px;
+	margin: 0 10px;
+	display: inline-block;
+}
+
+#paper {
+	background-image: url("../images/rps.png");
+	background-size: 600px 574px;
+	height: 185px;
+	width: 190px;
+	border-radius: 100%;
+	background-position: 195px -35px;
+	margin: 0 10px;
+	display: inline-block;
+}
+
+#scissors {
+	background-image: url("../images/rps.png");
+	background-size: 600px 574px;
+	height: 230px;
+	width: 200px;
+	border-radius: 100%;
+	margin: 0 10px;
+	display: inline-block;
+}
+
+#yourChoice {
+	padding: 10px;
+	font-size: 18px;
+}
+
+h1 {
+	color: blue;
+}
+
+#compAnswer {
+	color: red;
+	font-size: 28px;
+}
