@@ -4,17 +4,21 @@ window.onload = function() {
   	var paper = document.getElementById("paper");
   	var scissors = document.getElementById("scissors");
   	var backgroundMusic = new Audio("audio/blackmoorColossus.mp3");
-	backgroundMusic.volume = 0.4;
+	backgroundMusic.volume = 0.2;
 	backgroundMusic.play();
   	var youWin = new Audio("audio/orchestra.wav");
   	var youLose = new Audio("audio/lose.wav");
   	var tie = new Audio("audio/tie.wav");
 	var yourChoice = null;
 
+	modalWin = new CreateModalPopUpObject();
 
-	var roundWindow = function myFunction() {  
-    	document.getElementById("round").showModal();
-		setTimeout(function(){ document.getElementById("round").close(); }, 1000);
+	var modalWin = function myFunction() { 
+    document.getElementById("youWin").showModal(); 
+	} 
+
+	var modalLose = function myFunction() { 
+    document.getElementById("youLose").showModal(); 
 	} 
 
 	var randomRPS = function() {
@@ -46,9 +50,6 @@ var result = function (yourChoice) {
 	if (yourChoice == computerChoice) {
 		document.getElementById("finalanswer").innerHTML = "It's a Tie!";
 		tie.play();
-		roundWindow();
-		roundNum = document.getElementById("roundNumber");
-		roundNum.innerHTML ++;
 	}
 
 	if (yourChoice == "rock") {
@@ -56,20 +57,24 @@ var result = function (yourChoice) {
 		if (computerChoice == "scissors") {
 			document.getElementById("finalanswer").innerHTML =  "You Win!";
 			youWin.play();
-			scoreDiv = document.getElementById("myScore");
-			scoreDiv.innerHTML ++;
-			roundWindow();
-			roundNum = document.getElementById("roundNumber");
-			roundNum.innerHTML ++;
+			if (document.getElementById("myScore").innerHTML = "10") {
+				modalWin();
+			}
+			else if ( ) {
+				scoreDiv = document.getElementById("myScore");
+				scoreDiv.innerHTML ++;
+			}		
 		}
 		else if (computerChoice == "paper") {
 			document.getElementById("finalanswer").innerHTML = "Computer Wins";
 			youLose.play();
-			scoreDiv = document.getElementById("enemyScore");
-			scoreDiv.innerHTML ++;
-			roundWindow();
-			roundNum = document.getElementById("roundNumber");
-			roundNum.innerHTML ++;
+			if (document.getElementById("enemyScore").innerHTML = "10") {
+				modalLose();
+			}
+			else {
+				scoreDiv = document.getElementById("enemyScore");
+				scoreDiv.innerHTML ++;
+			}	
 		}
 	}
 
@@ -77,41 +82,48 @@ var result = function (yourChoice) {
 		if (computerChoice == "rock") {
 			document.getElementById("finalanswer").innerHTML = "You Win!";
 			youWin.play();
-			scoreDiv = document.getElementById("myScore");
-			scoreDiv.innerHTML ++;
-			roundWindow();
-			roundNum = document.getElementById("roundNumber");
-			roundNum.innerHTML ++;
+			if (document.getElementById("myScore").innerHTML = "10") {
+				modalWin();
+			}
+			else {
+				scoreDiv = document.getElementById("myScore");
+				scoreDiv.innerHTML ++;
+			}	
 		}
 		else if (computerChoice == "scissors" ) {
 			document.getElementById("finalanswer").innerHTML = "Computer Wins";
 			youLose.play();
-			scoreDiv = document.getElementById("enemyScore");
-			scoreDiv.innerHTML ++;
-			roundWindow();
-			roundNum = document.getElementById("roundNumber");
-			roundNum.innerHTML ++;
+			if (document.getElementById("enemyScore").innerHTML = "10") {
+				modalLose();
+			}
+			else {
+				scoreDiv = document.getElementById("enemyScore");
+				scoreDiv.innerHTML ++;
+			}	
 		}
 	}
 
 	if (yourChoice == "scissors") {
 		if (computerChoice == "paper") {
 			document.getElementById("finalanswer").innerHTML = "You Win!";
-			youWin.play();
-			scoreDiv = document.getElementById("myScore");
-			scoreDiv.innerHTML ++;
-			roundWindow();
-			roundNum = document.getElementById("roundNumber");
-			roundNum.innerHTML ++;
+			if (document.getElementById("myScore").innerHTML = "10") {
+				modalWin();
+			}
+			else {
+				scoreDiv = document.getElementById("myScore");
+				scoreDiv.innerHTML ++;
+			}	
 		}
 		else if (computerChoice == "rock") {
 			document.getElementById("finalanswer").innerHTML = "Computer Wins";
 			youLose.play();
-			scoreDiv = document.getElementById("enemyScore");
-			scoreDiv.innerHTML ++;
-			roundWindow();
-			roundNum = document.getElementById("roundNumber");
-			roundNum.innerHTML ++;
+			if (document.getElementById("enemyScore").innerHTML = "10") {
+				modalLose();
+			}
+			else {
+				scoreDiv = document.getElementById("enemyScore");
+				scoreDiv.innerHTML ++;
+			}	
 		}
 	}
 };
