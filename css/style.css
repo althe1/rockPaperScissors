@@ -10,6 +10,11 @@ h1 {
 audio {
 	display: none;
 }
+
+dialog {
+
+}
+
 #title {
 	background-color: black;
 	width: 300px;	
@@ -195,8 +200,4 @@ audio {
 #finalanswer {
 	color: red;
 	font-weight: bold;
-}
-
-#youWin {
-
 }
