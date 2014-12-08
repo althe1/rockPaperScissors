@@ -4,17 +4,43 @@
 	<meta charset="UTF-8">
 	<title>Rock Paper Scissor</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Orbitron:400,700' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="js/rps.js"></script>
 </head>
 <body>
-	<h1>Rock, Paper, Scissors Game</h1>
-	<h2>Please choose either rock paper or scissors:</h2>
-	<div id="rock"></div>
-	<div id="paper"></div>
-	<div id="scissors"></div>
-	<h2>The Computers Choice:</h2>
-	<div id="compAnswer"></div>
-	<h2>Result:</h2>
-	<h1 id="finalanswer"></h1>
+	<div id="title"><h1>The RPS Game</h1></div>	
+	<div id="gameboard">
+		<div id="scoreboard">	
+			<div id="leftboard">
+				<h3>My Score</h3>
+				<div id="myScore">0</div>
+			</div>
+			
+			<div id="rightboard">
+				<h3>Enemy Score</h3>
+				<div id="enemyScore">0</div>
+			</div>
+		</div>
+		<div id="maingame">
+			<div id="left">
+				<h2>Choose your Weapon!</h2>
+				<div id="choices">
+					<div id="rock"></div>
+					<div id="paper"></div>
+					<div id="scissors"></div>
+				</div>
+			</div>
+			<div id="right">
+				<h2>The Enemy's Weapon</h2>
+				<div id="choices">
+					<div id="rockComputer"></div>
+					<div id="paperComputer"></div>
+					<div id="scissorsComputer"></div>
+					<div id="compAnswer"></div>
+				</div>
+			</div>
+			<div id="result"><h2>Result: <span id="finalanswer"></span></h2></div>
+		</div>				
+	</div>
 </body>
 </html>
